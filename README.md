@@ -1,8 +1,7 @@
 # Homework Assignment 5
 
-\vspace{-5\baselineskip}
 
-**Due: Before Lecture 21**
+**Due: Before Lecture 21 (9:25 AM)**
 
 *Note 1: Homework Assignment 5 must be completed individually*
 
