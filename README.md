@@ -1,26 +1,9 @@
----
-title: |
-  \vspace{-2cm} CSC 110\
-  Introduction to Computer Science
-subtitle: |
-  **Homework Assignment 5**\
-  Work with Nested loops
-geometry: margin=2cm 
-header-includes: |
-  \setlength{\headsep}{1cm}
-  \hypersetup{colorlinks=true,
-    urlcolor=[RGB]{6,69,173},
-    linkcolor=[RGB]{6,69,173}}
-  \usepackage{color}  
-output:
-  pdf_document:
-    highlight-style: monochrome
----
+# Homework Assignment 5
 
 \vspace{-5\baselineskip}
 
-**Due: After Lecture 21 at 8 PM**
- 
+**Due: Before Lecture 21**
+
 *Note 1: Homework Assignment 5 must be completed individually*
 
 
@@ -28,7 +11,7 @@ output:
 
 The theme of this homework is a **word analysis program**.
 
-In this homework we are going to use nested loops to check a series of strings to see if they satisfy a certain pattern. The user will be asked to provide two characters: an upper case letter (A, B, or C), and an integer (1, 2, or 3). The task is to complete the necessary functions to print out those strings in the list where the letter and the number are present, and where the letter comes before the number.
+In this homework we are going to use nested loops to check a series of strings to see if they satisfy a certain pattern. The user will be asked to provide two characters: an upper case letter (A, B, or C), and an integer (1, 2, or 3). The task is to complete the necessary functions to print out those strings in the list where the letter and the number are present, and **where the letter comes before the number**.
 
 **Note: You are NOT allowed to use string methods except for the isdigit() string method.**
 
@@ -42,15 +25,15 @@ The list of pre-defined strings is set and you cannot alter them, they are:
 
 The user will provide one uppercase letter from these options: "A", "B", or "C", and a digit in these options: "1", "2", or "3".
 
-Example 1: 
+Example 1:
 if the user provides the letter "B" and the digit "1", then the
 word "1B1B" should be printed out because "B" and "1" are found, in that order
-inside the string "1B1B" (the first B and second 1). However, the string "1B@" is not printed because "B" does not appear somewhere before the "1" in the string "1B@".
+inside the string "1**B1**B" (the first B and second 1). However, the string "1B@" is not printed because "B" does not appear somewhere before the "1" in the string "1B@".
 
-Example 2: 
+Example 2:
 if the user provides the letter "B" and the digit "2", then the
 word "B@2@" should be printed out because "B" and "2" are found, in that order
-inside the string "B@2@". However, the string "@2B" is not printed because "B" does not appear somewhere before the "2" in the string "@2B".
+inside the string "**B**@**2**@". However, the string "@2B" is not printed because "B" does not appear somewhere before the "2" in the string "@2B".
 
 
 
@@ -58,7 +41,7 @@ inside the string "B@2@". However, the string "@2B" is not printed because "B" d
 
 I will ask you to **plan before you code.**
 If you don't plan the idea before using the keyboard, you might get a bit lost.
-If you need any help or want to debug, the FIRST THING I will ask you to show me will be your plan. 
+If you need any help or want to debug, the FIRST THING I will ask you to show me will be your plan.
 
   * Your plan can be a diagram of steps, a set of steps written in bullet-points, even using semi-python notes.
   * You should make this before you start editing the program.
@@ -68,9 +51,9 @@ Try coming up with the solution by yourself. If you get stuck, you can check out
 
 ## Your Tasks:
 
-For this homework you need to complete four tasks: 
+For this homework you need to complete four tasks:
   1) Make the `get_letter` function with input checking for the requested option.
-  2) Make the `get_digit` function with input checking for the requested option. 
+  2) Make the `get_digit` function with input checking for the requested option.
   3) Make the `check_pattern` function.
   4) Complete the `main` function
 
@@ -82,7 +65,7 @@ Also, read ALL of these notes and instructions before you start your work.
 
 ### Expected printout:
 
-So you understand what we are shooting for, an example run looks like this: 
+So you understand what we are shooting for, an example run looks like this:
 
 ```
 Give an single uppercase letter: R
@@ -98,7 +81,7 @@ Give an single number character: #
 Error: You provided the wrong character.
 Give an single number character: 2
 Strings with the pattern:
-B@2@ 
+B@2@
 Try Again? (y/n): n
 The End
 ```
@@ -109,12 +92,12 @@ another example is:
 Give an single uppercase letter: C
 Give an single number character: 2
 Strings with the pattern:
-@C@2 C2C2 
+@C@2 C2C2
 Try Again? (y/n): y
 Give an single uppercase letter: A
 Give an single number character: 1
 Strings with the pattern:
-AA@1 
+AA@1
 Try Again? (y/n): y
 Give an single uppercase letter: C
 Give an single number character: 3
@@ -138,7 +121,7 @@ All tests are very strict with respect to the format of requested prompts and pr
 
   * In this homework, we'll be using nested loops to compare a character inside one word to another character inside a second word. remember that the comparison operator is `==`
   * to obtain the length of a word (to help you with loop limits or to check word length) you can use the `len` function. For example : `len(word)` returns the length of the word.
-  * to check if a string contains a character you can use the containment operator 'in' as in ``` if "@" in word: ``` 
+  * to check if a string contains a character you can use the containment operator 'in' as in ``` if "@" in word: ```
   * to check if a string character is a digit, you can use the string method "isdigit()". If the string is called "text" then the code ``` text.isdigit() ``` will return "True" only if all characters in the string "text" are digits.
   * To access a value inside a list, use the square brackets access. Example: if the list is called "st_list" and you want to get a **copy** of the contents at index "idx", you can do this: ```val = st_list[idx]```.
   * To access a single character inside a string, use the square brackets access. Example: if the string is called "st" and you want to get a **copy** of the contents at index "idx", you can do this: ```ch = st[idx]```.
@@ -149,7 +132,7 @@ The `get_letter` function has no input parameters and does the following:
 
 ### define the function
 
-For this problem, you need to define the function. 
+For this problem, you need to define the function.
 It needs no input parameters but it returns one string (a single character).
 Inside the function, you should repeatedly do the following:
 
@@ -171,7 +154,7 @@ The `get_digit` function has no input parameters and does the following:
 
 ### define the function
 
-For this problem, you need to define the function. 
+For this problem, you need to define the function.
 It needs no input parameters but it returns one string (a single digit character).
 Inside the function, you should repeatedly do the following:
 
@@ -185,13 +168,13 @@ When you are done, remember to call this function from the `main` function to kn
 
 ### Testing
 
-We provide three tests to see if the `get_digit` function is correct. 
+We provide three tests to see if the `get_digit` function is correct.
 
 ## Task 3: check_pattern
 
 The `check_pattern` function receives the letter character, the digit character, and the string list called "st_list" (defined in the main) as input and it:
-  
-  * checks if any of the words inside the list contain the letter and number (in that order) and 
+
+  * checks if any of the words inside the list contain the letter and number (in that order) and
   * prints any that do contain them.
 
 An example is:
@@ -212,7 +195,7 @@ The resulting full printout for that example is:
 Give an single uppercase letter: C
 Give an single number character: 2
 Strings with the pattern:
-@C@2 C2C2 
+@C@2 C2C2
 Try Again? (y/n): n
 The End
 ```
@@ -222,7 +205,7 @@ Notice that you need to add code to the main function so that all of this is com
 
 ### define the function
 
-For this problem, you need to define the function.. 
+For this problem, you need to define the function..
 It needs to accept three input parameters, called `letter`, `digit`, and `lst`.
 
 Before checking the list, it prints the following message: "Strings with the pattern:".
@@ -282,12 +265,30 @@ Lastly (outside the loop): after the user chooses not to try again, print "The E
 ### General
 The submission:
 
-* includes a header with the name of any peers and any references (or -10%)
-* runs without syntax errors (or -50%)
-* uses appropriate, informative variable names (or -10%)
-* adds a few small but informative comments (or -10%)
+  * **IMPORTANT**: If your code does not compile, you get 0% of your grade so make sure you run your code often (to avoid syntax or runtime errors) and you always have it in a "running" state, even if it does not get the desired results.
+  * Your grade will be the percentage of tests you pass.
+  * You have any imports on the top, you added Docstrings (or -5%),
+  * You added a few small but informative comments (or -5%)
 
-### Operations
-The program:
+  ### Operations
 
-  * Passes all 12 tests (or lose 8% per failed test)
+  The program:
+
+    * Passes all 12 tests (or lose ~8% per missed test).
+
+  Note: before submitting, you should check all the boxes that you actually completed like this:
+
+    - [x] this is a checked box
+
+  The submission (check boxes after you complete each step):
+
+    - [ ] you added your name to the top comments of the python file
+    - [ ] runs without syntax errors (or -50%)
+    - [ ] adds a few small but informative comments (or -5%)
+    - [ ] adds docstrings to each function (or -5%)
+    - [ ] Passes all tests (or lose points per missed test). If you do not pass all tests, do not check this box
+    - [ ] You checked the correct boxes
+
+## Submitting
+
+Submit to your GitHub repositories before the due date/time.
